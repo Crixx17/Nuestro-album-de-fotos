@@ -1,0 +1,134 @@
+body {
+    font-family: 'Iosevka Charon Mono', monospace;
+background: #EEAECA;
+background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(90deg, rgba(11, 34, 51, 1) 45%, rgba(191, 17, 17, 1) 75%);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    Font-family: 'Iosevka Charon Mono', monospace;
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.upload-section {
+    background: #0B2233;
+    COLOR: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #BF1111;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    font-family: 'Iosevka Charon Mono', monospace;
+}
+
+button:hover {
+    background-color: #8A0D0D;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.photo-card {
+    background: whitE;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.photo-card-content {
+    padding: 1rem;
+}
+
+.photo-card-content p {
+    margin: 0 0 0.5rem 0;
+}
+
+.photo-card-content span {
+    font-size: 0.85rem;
+    color: #888;
+    background: #eee;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+
+/* --- ANIMACIÓN DE CORAZONES CAYENDO --- */
+.heart-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite hacer clic en la página sin que estorben */
+    overflow: hidden;
+    z-index: 9999; /* Se mantiene por encima de todo */
+}
+
+.falling-heart {
+    position: absolute;
+    top: -30px;
+    color: #BF1111; /* Color exacto solicitado */
+    user-select: none;
+    font-family: Arial, sans-serif;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}

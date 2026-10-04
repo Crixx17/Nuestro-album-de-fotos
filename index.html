@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Álbum de Recuerdos❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Nuestro Álbum de Momentos</h1>
+        <p>Un espacio especial para nosotros</p>
+    </header>
+
+    <main>
+        <!-- Formulario para subir nuevas fotos -->
+        <section class="upload-section">
+            <h2>Subir un nuevo recuerdo</h2>
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="fotoInput">Selecciona una foto:</label>
+                    <input type="file" id="fotoInput" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoriaSelect">Categoría:</label>
+                    <select id="categoriaSelect" required>
+                        <option value="">Cargando categorías...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionInput">Descripción:</label>
+                    <textarea id="descripcionInput" placeholder="Escribe algo lindo sobre este momento..."></textarea>
+                </div>
+                <button type="submit" id="btnSubir">Guardar Recuerdo</button>
+            </form>
+        </section>
+
+        <!-- Galería de fotos -->
+        <section class="gallery-section">
+            <h2>Nuestros Recuerdos</h2>
+            <div id="galeriaGrid" class="grid-container">
+                <!-- Las fotos se cargarán aquí automáticamente con JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
+</body>
+</html
