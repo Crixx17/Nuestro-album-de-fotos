@@ -219,3 +219,38 @@ function iniciarLluviaDeCorazones() {
 
 // Activar la lluvia de corazones al cargar la página
 iniciarLluviaDeCorazones();
+
+
+// --- SISTEMA DE CONTRASEÑA ---
+// Puedes cambiar "1411" por la fecha, número o palabra secreta que prefieras
+const CLAVE_SECRETA = "1724"; 
+
+// Si ya inició sesión antes en esta pestaña, ocultamos el bloqueo de inmediato
+if (sessionStorage.getItem('autenticado') === 'true') {
+    const lockScreen = document.getElementById('lockScreen');
+    if (lockScreen) lockScreen.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnUnlock = document.getElementById('btnUnlock');
+    const passwordInput = document.getElementById('passwordInput');
+    const errorMsg = document.getElementById('errorMsg');
+    const lockScreen = document.getElementById('lockScreen');
+
+    if (!btnUnlock) return;
+
+    function verificarPassword() {
+        if (passwordInput.value === CLAVE_SECRETA) {
+            sessionStorage.setItem('autenticado', 'true');
+            lockScreen.style.display = 'none';
+        } else {
+            errorMsg.style.display = 'block';
+            passwordInput.value = '';
+        }
+    }
+
+    btnUnlock.addEventListener('click', verificarPassword);
+    passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') verificarPassword();
+    });
+});
