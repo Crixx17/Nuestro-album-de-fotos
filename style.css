@@ -1,18 +1,30 @@
+:root {
+    --color-background: #FFF8F3;
+    --color-surface: #FFFFFF;
+    --color-text: #3F3036;
+    --color-primary: #A7445A;
+    --color-primary-hover: #7F3044;
+    --color-soft: #F1E1E3;
+    --color-muted: #75666B;
+    --color-border: #E5D6D9;
+}
+
 body {
-    font-family: 'Iosevka Charon Mono', monospace;
-background: #EEAECA;
-background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-    color: #333;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--color-background);
+    color: var(--color-text);
     margin: 0;
     padding: 0;
 }
 
 header {
-    background: linear-gradient(90deg, rgba(11, 34, 51, 1) 45%, rgba(191, 17, 17, 1) 75%);
-    color: white;
+    background: var(--color-surface);
+    color: var(--color-text);
     text-align: center;
     padding: 2rem 1rem;
-    Font-family: 'Iosevka Charon Mono', monospace;
+    border-bottom: 4px solid var(--color-primary);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(63, 48, 54, 0.06);
 }
 
 main {
@@ -22,11 +34,11 @@ main {
 }
 
 .upload-section {
-    background: #0B2233;
-    COLOR: white;
+    background: var(--color-surface);
+    color: var(--color-text);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(63, 48, 54, 0.08);
     margin-bottom: 2rem;
 }
 
@@ -43,13 +55,21 @@ main {
 .form-group input, .form-group select, .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     box-sizing: border-box;
+    color: var(--color-text);
+    background: var(--color-surface);
+    font: inherit;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 button {
-    background-color: #BF1111;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -58,11 +78,11 @@ button {
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    font-family: 'Iosevka Charon Mono', monospace;
+    font-family: inherit;
 }
 
 button:hover {
-    background-color: #8A0D0D;
+    background-color: var(--color-primary-hover);
 }
 
 .grid-container {
@@ -72,10 +92,10 @@ button:hover {
 }
 
 .photo-card {
-    background: whitE;
+    background: var(--color-surface);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(63, 48, 54, 0.08);
 }
 
 .photo-card img {
@@ -94,8 +114,8 @@ button:hover {
 
 .photo-card-content span {
     font-size: 0.85rem;
-    color: #888;
-    background: #eee;
+    color: var(--color-muted);
+    background: var(--color-soft);
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
 }
@@ -116,7 +136,7 @@ button:hover {
 .falling-heart {
     position: absolute;
     top: -30px;
-    color: #BF1111; /* Color exacto solicitado */
+    color: var(--color-primary);
     user-select: none;
     font-family: Arial, sans-serif;
     animation: fall linear infinite;
@@ -140,7 +160,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #f8fafc;
+    background: var(--color-background);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,10 +168,10 @@ button:hover {
 }
 
 .lock-box {
-    background: white;
+    background: var(--color-surface);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(63, 48, 54, 0.12);
     text-align: center;
     max-width: 320px;
     width: 90%;
@@ -159,12 +179,12 @@ button:hover {
 
 .lock-box h2 {
     margin-bottom: 8px;
-    color: #1e293b;
+    color: var(--color-text);
     font-size: 20px;
 }
 
 .lock-box p {
-    color: #64748b;
+    color: var(--color-muted);
     font-size: 14px;
     margin-bottom: 20px;
 }
@@ -172,22 +192,26 @@ button:hover {
 .lock-box input {
     width: 100%;
     padding: 10px 14px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     margin-bottom: 12px;
     font-size: 14px;
     box-sizing: border-box;
     outline: none;
+    color: var(--color-text);
+    font-family: inherit;
 }
 
 .lock-box input:focus {
-    border-color: #BF1111;
+    border-color: var(--color-primary);
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 .lock-box button {
     width: 100%;
     padding: 10px;
-    background: #BF1111;
+    background: var(--color-primary);
     color: white;
     border: none;
     border-radius: 6px;
@@ -197,5 +221,5 @@ button:hover {
 }
 
 .lock-box button:hover {
-    opacity: 0.9;
+    background: var(--color-primary-hover);
 }
